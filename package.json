@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/kodigans/React-config/issues"
   },
-  "homepage": "https://github.com/kodigans/React-config#readme"
+  "homepage": "https://github.com/kodigans/React-config#readme",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  }
 }
