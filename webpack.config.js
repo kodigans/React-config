@@ -1,34 +1,14 @@
-const path = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
-const extractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const merge = require('webpack-merge');
+const common = require('./webpackConfig/webpack.common');
+const prod = require('./webpackConfig/webpack.production');
+const dev = require('./webpackConfig/webpack.development')
+const lessLoader = require('./webpackConfig/webpack-less');
+const jsxLoadrer = require('./webpackConfig/webpack-jsx-js');
 
-module.exports = {
-    entry: './src/index.js',
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.(js$|jsx$)/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader"
-                }
-            },
-            {
-                test: /\.less$/,                
-                use: extractTextWebpackPlugin.extract({                   
-                    use: ['css-loader', 'less-loader']
-                })
-            }
-        ]
-    },
-    plugins: [
-        new htmlWebpackPlugin({
-            template: './src/index.html'
-        }),
-        new extractTextWebpackPlugin('style/style.css')
-    ]
-}
+module.exports = env => {
+  if (env.production === 'build') {    
+    return merge(common, lessLoader, jsxLoadrer, dev)
+  } 
+  
+  return merge(common,lessLoader, jsxLoadrer, prod);  
+};
