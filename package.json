@@ -4,8 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "server": "webpack-dev-server --mode development --open --hot"
+    "build": "webpack --env.production=prod",
+    "server": "webpack-dev-server --env.production=build"
+    
   },
   "repository": {
     "type": "git",
@@ -32,9 +33,11 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "D": "^1.0.0",
     "css-loader": "^2.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "style-loader": "^0.23.1"
+    "style-loader": "^0.23.1",
+    "webpack-merge": "^4.2.1"
   }
 }
