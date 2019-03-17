@@ -4,7 +4,7 @@ const prod = require('./webpackConfig/webpack.production');
 const dev = require('./webpackConfig/webpack.development')
 const lessLoader = require('./webpackConfig/webpack-less');
 const jsxLoadrer = require('./webpackConfig/webpack-jsx-js');
-const tsLoadrer = require('./webpackConfig/webpack-ts');
+const tsLoadrer = require('./webpackConfig/webpack-tsx');
 
 module.exports = env => {
   if (env.production === 'build') {    
