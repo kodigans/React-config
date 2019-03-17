@@ -1,1 +1,2 @@
-console.log(true);
+import './style/main.less';
+import './App';
