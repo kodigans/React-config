@@ -11,14 +11,14 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js$|jsx$)/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
                 }
             },
             {
-                test: /\.less$/,
+                test: /\.less$/,                
                 use: extractTextWebpackPlugin.extract({                   
                     use: ['css-loader', 'less-loader']
                 })
