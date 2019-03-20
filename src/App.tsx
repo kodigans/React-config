@@ -1,16 +1,24 @@
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { LoggerForm } from './components/LogerForm/LogerForm';
 
 
-function App() {
-    let mission: string = 'Mission completed';
+interface IAppProps {}
+interface IAppState {}
 
-    return (
-        <h1>
-            {mission}
-        </h1>
-    )
-};
+class App extends  React.Component<IAppProps, IAppState> {
+    constructor(props: IAppProps) {
+        super(props);
+    }
+
+    public render() {
+        return (
+            <>
+                <LoggerForm />
+            </>
+        );
+    }
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
