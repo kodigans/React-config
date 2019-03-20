@@ -6,6 +6,9 @@ module.exports = {
     devServer: {            
         open: true
       },
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".json"]
+    },
     plugins: [
         new extractTextWebpackPlugin('style/style.css'),
         new HtmlWebpackPlugin({
