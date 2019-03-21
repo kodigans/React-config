@@ -2,14 +2,11 @@ const merge = require('webpack-merge');
 const common = require('./webpackConfig/webpack.common');
 const prod = require('./webpackConfig/webpack.production');
 const dev = require('./webpackConfig/webpack.development')
-const lessLoader = require('./webpackConfig/webpack-less');
-const jsxLoadrer = require('./webpackConfig/webpack-jsx-js');
-const tsLoadrer = require('./webpackConfig/webpack-tsx');
 
 module.exports = env => {
   if (env.production === 'build') {    
-    return merge(common, lessLoader, jsxLoadrer, tsLoadrer, dev)
+    return merge(common, dev)
   } 
   
-  return merge(common,lessLoader, jsxLoadrer, prod);  
+  return merge(common, prod);  
 };
