@@ -1,24 +1,26 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import RegistrationFormPresentational from './Components/RegistrationForm/RegistrationFormPresentational';
+import ToolBar from "./Components/ToolBar/ToolBar";
+import Option from  "./Components/ToolBar/Option/Option";
+import NotificationPresentation from "./Components/Notification/Notification";
+import { Fonts } from './Fonts/Fonts';
+import EventForm from "./Components/EventForm/EventForm";
 
-import { LoggerForm } from './components/LogerForm/LogerForm';
+class App extends React.Component<{}, {}> {
 
+    render() {
 
-interface IAppProps {}
-interface IAppState {}
-
-class App extends  React.Component<IAppProps, IAppState> {
-    constructor(props: IAppProps) {
-        super(props);
-    }
-
-    public render() {
         return (
             <>
-                <LoggerForm />
+                <Fonts/>
+                {/*<RegistrationFormPresentational/>*/}
+                {/*<ToolBar/>*/}
+                {/*<NotificationPresentation/>*/}
+                <EventForm/>
             </>
-        );
+        )
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));

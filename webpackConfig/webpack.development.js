@@ -26,6 +26,17 @@ module.exports = {
                     use: ['css-loader', 'less-loader']
                 })
             },
+            {
+                test: /\.(svg|png|woff|ttf|eot|woff2|jpg)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[folder]/[name].[ext]',
+                        },
+                    },
+                ],
+            },
         ]
     }, 
     plugins: [
@@ -34,4 +45,4 @@ module.exports = {
             template: './src/index.html',      
           }),  
     ]
-}
+};
