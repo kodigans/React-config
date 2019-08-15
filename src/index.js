@@ -1,2 +1,2 @@
 import './style/main.less';
-import './App';
+import './App.tsx';
